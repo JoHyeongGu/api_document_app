@@ -89,7 +89,7 @@ class _CreateState extends State<Create> {
       data['title'] = titleInputController.text;
       data['domain'] = domainInputController.text;
       data['thumbnail'] =
-          await storage.uploadFile(data['thumbnail'], data['title']);
+          await storage.uploadFile(data['thumbnail'], idInputController.text);
       data['created_date'] = DateTime.now().toUtc().toIso8601String();
       insertRealtime(
         'projects/${idInputController.text}',

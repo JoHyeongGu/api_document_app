@@ -1,5 +1,6 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:api_document/firebase/storage.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
@@ -279,7 +280,8 @@ class _TileState extends State<Tile> {
                                       child: IconButton(
                                         onPressed: () {
                                           deleteRealtime(
-                                              'projects/${widget.item["id"]}');
+                                              'projects/${widget.item['id']}');
+                                          deleteFile(widget.item['id']);
                                         },
                                         color: chooseTextColor(
                                           Color(
